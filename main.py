@@ -217,6 +217,9 @@ def get_profile(session_id, device_id, iid):
         )
         url = f"https://api16.tiktokv.com/aweme/v1/user/profile/self/?{parm}"
         headers = {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
             "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
             "Cookie": f"sessionid={session_id}",
             "sdk-version": "2",
@@ -243,6 +246,9 @@ def change_username(session_id, device_id, iid, last_username, new_username):
     sig = run(parm, md5(data.encode("utf-8")).hexdigest() if data else None,None)  
     url = f"https://api16.tiktokv.com/aweme/v1/commit/user/?{parm}"
     headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
         "Connection": "keep-alive",
         "User-Agent": "Whee 1.1.0 rv:11005 (iPad; iOS 17.4.1; en_SA@calendar=gregorian) Cronet",
 
