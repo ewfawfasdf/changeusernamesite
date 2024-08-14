@@ -309,7 +309,9 @@ def main(page):
                     logadd("Slow down you are editing to fast, попрбуй на другом аккаунте")
                 page.update()
         else:
+            ftbutton.visible = True
             logadd("Invalid session ID or other error.")
+            page.update()
 
     sesid = ft.TextField(keyboard_type=ft.KeyboardType.TEXT)
     newname = ft.TextField(keyboard_type=ft.KeyboardType.TEXT)
