@@ -1,6 +1,7 @@
 # coding:utf-8
 import hashlib
 import json
+from flask_cors import CORS
 import flet as ft
 from flet import IconButton, Page, Row, TextField, icons
 from time import time, sleep
@@ -270,7 +271,8 @@ import flet as ft
 
 
 def main(page):
-
+    app = Flask(__name__)
+    CORS(app)
     page.adaptive = True
 
     page.appbar = ft.AppBar(
